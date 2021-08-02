@@ -1,0 +1,18 @@
+<div *ngIf="faction">
+    <nb-tabset>
+            <nb-tab tabTitle="{{phase}}" *ngFor="let phase of phases">
+                <div *ngFor="let stratagem of faction.stratagems">
+                    <div *ngIf="stratagem.phase === phase">
+                        <nb-accordion>
+                            <nb-accordion-item>
+                                <nb-accordion-item-header>{{stratagem.name}}: {{stratagem.cost}}CP</nb-accordion-item-header>
+                                <nb-accordion-item-body>{{stratagem.text}}</nb-accordion-item-body>
+                            </nb-accordion-item>
+                        </nb-accordion>
+                    </div>
+                </div>
+            </nb-tab>
+    </nb-tabset>
+</div>
+
+
